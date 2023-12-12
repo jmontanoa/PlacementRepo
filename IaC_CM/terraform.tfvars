@@ -40,6 +40,6 @@ subscription_id= "63f494a1-be1c-4550-9188-5d40a7f0bf50"
 
 client_id="6d40a0a6-38d7-4a51-b71d-59344549a0e6"
 
-client_secret="sFa8Q~.foTEd0rVXX3TWgQ6zqmQDHep7gukyLbIV"
+client_secret=""
 
 tenant_id="8825b989-77d0-4279-b4ce-2fb99deea692"
