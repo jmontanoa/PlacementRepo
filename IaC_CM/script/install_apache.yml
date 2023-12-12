@@ -1,0 +1,19 @@
+---
+- hosts: all
+  become: true
+  tasks:
+    - name: install apache2 package
+      apt:
+        name:
+          - apache2
+          - libapache2-mod-php
+        state: latest
+        update_cache: yes
+
+    - name: copy project file for site
+      copy:
+        src: index.html
+        dest: /var/www/html/index.html
+        owner: ansibleUser
+        group: ansibleUser
+        mode: 0644

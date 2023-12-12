@@ -1,0 +1,10 @@
+FROM octopusdeploy/octopusdeploy:2022.2.7482
+HEALTHCHECK CMD response=$(/usr/bin/curl http://localhost:8081/api/octopusservernodes/ping --write-out %{http_code} --silent --output /dev/null); /usr/bin/test $response -ge 200 && /usr/bin/test $response -le 299 || /usr/bin/test $response -eq 418;
+EXPOSE 8443
+EXPOSE 8081
+EXPOSE 10944
+WORKDIR /Octopus
+RUN sed -i 's/10943/10944/' ./install.sh
+RUN sed -i 's/:8080/:8081/' ./install.sh
+ENTRYPOINT ["./install.sh"]
+CMD ["bash"]
